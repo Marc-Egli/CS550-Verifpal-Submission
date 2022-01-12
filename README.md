@@ -14,7 +14,7 @@
 └── README.md
 ``` 
 
-The `models folders contains the different Verifpal implementations of Kerberos.
+The models folders contains the different Verifpal implementations of Kerberos.
 - `kerberos_active_guarded.vp`: active attacker, all variables guarded. Verification terminates in 20 minutes.
 - `kerberos_active.vp`: active attacker, all variable unguarded. Verification takes weeks/months.
 - `kerberos_oracle.vp`: active attacker with a chosen plaintext oracle. An attack is found after a few hours
