@@ -1,4 +1,4 @@
-# CS550 Project - Formal veridication of Kerberos with Veripal
+# CS550 Project - Formal verification of Kerberos with Veripal
 
 ### Repository structure
 ``` 
