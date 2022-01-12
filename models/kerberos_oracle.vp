@@ -1,0 +1,169 @@
+attacker[active]
+
+// ==============================
+// Client <--> AS
+// ==============================
+
+principal Client[
+    // Client credentials (preshared)
+    knows password cPassword
+    knows public clientId
+
+    // The client key is the hash of the password
+    c_clientKey = PW_HASH(cPassword)
+
+    // Generate payload for the server
+    generates dummy
+    m = CONCAT(clientId, dummy)
+]
+Client -> AS: m
+
+principal AS[
+    // Known preshared symmetric keys
+    knows private tgsKey
+
+    // Client credentials (preshared)
+    knows password cPassword
+    knows public clientId
+
+    // NOTE:
+    //
+    // The following should be done through a
+    // lookup into the clients DB but - for
+    // simplicity - we assume there is a single
+    // client in our system.
+
+    // Check that the clientID is a valid
+    as_clientId, _ = SPLIT(m)
+    _ = ASSERT(clientId, as_clientId)?
+
+    // The client key is the hash of the password
+    as_clientKey = PW_HASH(cPassword)
+
+    // Generate client payload
+    generates as_sessionTGS
+    encSessionTGS = AEAD_ENC(as_clientKey, as_sessionTGS, nil)
+
+    // Generate TGT
+    as_TGT = CONCAT(clientId, as_sessionTGS)
+    encTGT = AEAD_ENC(tgsKey, as_TGT, nil)
+]
+AS -> Client: encSessionTGS, encTGT
+
+// ==============================
+// Client <--> TGS
+// ==============================
+
+principal Client[
+    // Decrypt TGS session key
+    c_sessionTGS = AEAD_DEC(c_clientKey, encSessionTGS, nil)?
+
+    // Generate authentication payload for the TGS
+    generates c_TGSTime
+    c_authTGS = CONCAT(clientId, C_TGSTime)
+    encAuthTGS = AEAD_ENC(c_sessionTGS, c_authTGS, nil)
+]
+Client -> TGS: encTGT, encAuthTGS
+
+principal TGS[
+    // Known preshared symmetric keys
+    knows private tgsKey
+    knows private sKey
+
+    // Decrypt messages and extract data
+    tgs_TGTclientId, tgs_sessionTGS = SPLIT(AEAD_DEC(tgsKey, encTGT, nil)?)?
+    tgs_clientId, tgs_time = SPLIT(AEAD_DEC(tgs_sessionTGS, encAuthTGS, nil)?)?
+
+    // Check client ID
+    _ = ASSERT(tgs_clientId, tgs_TGTclientId)?
+
+    // Generate client payload
+    generates tgs_sessionServer
+    encSessionServer = AEAD_ENC(tgs_sessionTGS, tgs_sessionServer, nil)
+
+    // Generate Ticket
+    tgs_ticket = CONCAT(tgs_TGTclientId, tgs_sessionServer)
+    encTicket = AEAD_ENC(sKey, tgs_ticket, nil)
+]
+TGS -> Client: encSessionServer, encTicket
+
+// ==============================
+// Client <--> Server
+// ==============================
+
+principal Client[
+    // Decrypt server session key
+    c_sessionServer = AEAD_DEC(c_sessionTGS, encSessionServer, nil)?
+
+    // Generate authentication payload for the server
+    generates c_ServerTime
+    c_authServer = CONCAT(clientId, C_ServerTime)
+    encAuthServer = AEAD_ENC(c_sessionServer, c_authServer, nil)
+]
+Client -> Server: encAuthServer, encTicket
+
+principal Server[
+    // Known preshared symmetric keys
+    knows private sKey
+
+    // Decrypt messages and extract data
+    s_TicketClientId, s_sessionServer = SPLIT(AEAD_DEC(sKey, encTicket, nil)?)?
+    s_clientId, s_time = SPLIT(AEAD_DEC(s_sessionServer, encAuthServer, nil)?)?
+
+    // Check client ID
+    _ = ASSERT(s_TicketClientId, s_clientId)?
+
+    // Generate hack message for the client
+    s_ack = HASH(s_time)
+    encAck = AEAD_ENC(s_sessionServer, s_ack, nil)
+]
+Server -> Client: encAck
+
+principal Client[
+    // Verify server ack
+    c_ack = AEAD_DEC(c_sessionServer, encAck, nil)?
+    _ = ASSERT(c_ack, HASH(c_ServerTime))
+]
+
+// ==============================
+// Oracle
+// ==============================
+
+principal OracleClient[
+    generates oracle_input
+]
+
+OracleClient -> OracleServer: oracle_input
+
+principal OracleServer[
+    knows private tgsKey
+    knows private sKey
+    knows password cPassword
+    o_clientKey = PW_HASH(cPassword)
+
+    oracle_tgs = AEAD_ENC(tgsKey, oracle_input, nil)
+    oracle_server = AEAD_ENC(sKey, oracle_input, nil)
+    oracle_client = AEAD_ENC(o_clientKey, oracle_input, nil)
+]
+
+OracleServer -> OracleClient: oracle_tgs, oracle_server, oracle_client
+
+
+// ==============================
+// Queriess
+// ==============================
+
+queries[
+    // The goal of Kerberos is that both the client and the server verify each other's identity
+
+    // Can the Server authenticate the Client as the sender of the ticket?
+    authentication? Client -> Server: encTicket
+    // Is the Client actually talking to the correct Server?
+    authentication? Server -> Client: encAck
+
+
+    // The client's passwords should not leak
+    confidentiality? cPassword
+    // The session key used between the server and the client should not leak
+    confidentiality? c_sessionServer
+]

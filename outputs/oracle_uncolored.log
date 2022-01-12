@@ -1,0 +1,413 @@
+Verifpal 0.26.1 - https://verifpal.com
+  Warning • Verifpal is Beta software. 
+ Verifpal • Parsing model 'kerberos_oracle.vp'... 
+ Verifpal • Verification initiated for 'kerberos_oracle.vp' at 04:02:11 AM. 
+     Info • Attacker is configured as active. 
+     Info • Running at phase 0. 
+ Analysis • Constructed skeleton PW_HASH(nil) based on PW_HASH(cpassword). 
+ Analysis • Constructed skeleton SPLIT(CONCAT(nil, nil)) based on SPLIT(CONCAT(clientid, dummy)). 
+ Analysis • Constructed skeleton SPLIT(CONCAT(nil, nil)) based on SPLIT(CONCAT(clientid, dummy)). 
+ Analysis • Constructed skeleton ASSERT(nil, SPLIT(CONCAT(nil, nil))) based on ASSERT(clientid, SPLIT(CONCAT(clientid, dummy)))?. 
+ Analysis • Constructed skeleton AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil) based on AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?). 
+ Analysis • Constructed skeleton AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil) based on AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?). 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?). 
+ Analysis • Constructed skeleton AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil), nil) based on AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?). 
+ Analysis • Constructed skeleton ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil), nil)), SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil))) based on ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?))?. 
+ Analysis • Constructed skeleton CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil) based on CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver). 
+ Analysis • Constructed skeleton AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil) based on AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)) based on SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?. 
+ Analysis • Constructed skeleton AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil) based on AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)) based on SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?. 
+ Analysis • Constructed skeleton AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil) based on AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?. 
+ Analysis • Constructed skeleton SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil)) based on SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?. 
+ Analysis • Constructed skeleton ASSERT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))) based on ASSERT(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?)?. 
+ Analysis • Constructed skeleton HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))) based on HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?). 
+ Analysis • Constructed skeleton AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))), nil), nil) based on AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?. 
+ Analysis • Constructed skeleton ASSERT(AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))), nil), nil), HASH(nil)) based on ASSERT(AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?, HASH(c_servertime)). 
+ Analysis • Constructed skeleton HASH(nil) based on HASH(c_servertime). 
+Deduction • Output of ASSERT(clientid, clientid)? obtained by reconstructing with clientid, clientid. 
+Deduction • Output of AEAD_ENC(PW_HASH(nil), nil, nil) obtained by decomposing AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil) with PW_HASH(nil). 
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), nil) obtained by decomposing AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil) with nil. 
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil) obtained by decomposing AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), AEAD_ENC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), CONCAT(nil, nil), nil), nil) with SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)). 
+Deduction • Output of AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil) obtained by decomposing AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil) with AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil). 
+Deduction • Output of AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil) obtained by decomposing AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil) with nil. 
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil) obtained by decomposing AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil) with SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)). 
+Deduction • Output of AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))), nil) obtained by decomposing AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil), nil), nil)), AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil), CONCAT(nil, nil), nil), nil))), nil), nil) with AEAD_DEC(AEAD_DEC(PW_HASH(nil), AEAD_ENC(PW_HASH(nil), nil, nil), nil), AEAD_ENC(SPLIT(AEAD_DEC(nil, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)), nil, nil), nil). 
+Deduction • Output of CONCAT(nil, nil) obtained by decomposing AEAD_ENC(nil, CONCAT(nil, nil), nil) with nil. 
+Deduction • dummy obtained as a concatenated fragment of CONCAT(clientid, dummy). 
+Deduction • Output of AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. 
+Deduction • Output of AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil) obtained by equivalizing with the current resolution of encsessionserver. 
+Deduction • Output of AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. 
+Deduction • Output of AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. 
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil) obtained by equivalizing with the current resolution of encack. 
+ Analysis • Initializing Stage 1 mutation map for Client... 
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 148631)
+Deduction • Output of AEAD_ENC(nil, nil, nil) obtained by reconstructing with nil, nil, nil. (Analysis 148856)
+   Result • authentication? Server -> Client: encack — When:
+            as_clientid → SPLIT(CONCAT(clientid, dummy))
+            unnamed_0 → SPLIT(CONCAT(clientid, dummy))
+            unnamed_1 → ASSERT(clientid, SPLIT(CONCAT(clientid, dummy)))?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil)
+            enctgt → AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil)
+            c_sessiontgs → AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?
+            encauthtgs → AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?)
+            tgs_sessiontgs → SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?)
+            tgs_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            tgs_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            unnamed_2 → ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?))?
+            encsessionserver → AEAD_ENC(SPLIT(CONCAT(clientid, as_sessiontgs)), tgs_sessionserver, nil)
+            tgs_ticket → CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver)
+            encticket → AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil)
+            c_sessionserver → AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?
+            encauthserver → AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) ← obtained by Attacker
+            s_ticketclientid → SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?
+            s_sessionserver → SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?
+            s_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?
+            s_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?
+            unnamed_3 → ASSERT(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?)?
+            s_ack → HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?)
+            encack → AEAD_ENC(SPLIT(CONCAT(clientid, tgs_sessionserver))?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil)
+            c_ack → AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?
+            unnamed_4 → ASSERT(AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?, HASH(c_servertime))
+            oracle_client → AEAD_ENC(PW_HASH(cpassword), oracle_input, nil)
+
+            In another session:
+            as_clientid → clientid
+            unnamed_0 → dummy
+            unnamed_1 → ASSERT(clientid, clientid)?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil)
+            enctgt → AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil)
+            c_sessiontgs → as_sessiontgs
+            encauthtgs → AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → clientid
+            tgs_sessiontgs → as_sessiontgs
+            tgs_clientid → clientid
+            tgs_time → c_tgstime
+            unnamed_2 → ASSERT(clientid, clientid)?
+            encsessionserver → AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil) ← obtained by Attacker
+            tgs_ticket → CONCAT(clientid, tgs_sessionserver)
+            encticket → AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil)
+            c_sessionserver → tgs_sessionserver
+            encauthserver → AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil)
+            s_ticketclientid → clientid
+            s_sessionserver → tgs_sessionserver
+            s_clientid → clientid
+            s_time → c_servertime
+            unnamed_3 → ASSERT(clientid, clientid)?
+            s_ack → HASH(c_servertime)
+            encack → AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil)
+            c_ack → HASH(c_servertime)
+            unnamed_4 → ASSERT(HASH(c_servertime), HASH(c_servertime))
+            oracle_client → AEAD_ENC(PW_HASH(cpassword), oracle_input, nil)
+
+            In another session:
+            as_clientid → clientid
+            unnamed_0 → dummy
+            unnamed_1 → ASSERT(clientid, clientid)?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil)
+            enctgt → clientid ← mutated by Attacker (originally AEAD_ENC(tgskey, as_tgt, nil))
+            c_sessiontgs → as_sessiontgs
+            encauthtgs → AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_sessiontgs → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?)
+            tgs_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?)
+            unnamed_2 → ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, clientid, nil)?))?
+            encsessionserver → AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil) ← mutated by Attacker (originally AEAD_ENC(tgs_sessiontgs, tgs_sessionserver, nil))
+            tgs_ticket → CONCAT(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), tgs_sessionserver)
+            encticket → clientid ← mutated by Attacker (originally AEAD_ENC(skey, tgs_ticket, nil))
+            c_sessionserver → tgs_sessionserver
+            encauthserver → AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil)
+            s_ticketclientid → SPLIT(AEAD_DEC(skey, clientid, nil)?)?
+            s_sessionserver → SPLIT(AEAD_DEC(skey, clientid, nil)?)?
+            s_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, clientid, nil)?)?, AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?)?
+            s_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, clientid, nil)?)?, AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?)?
+            unnamed_3 → ASSERT(SPLIT(AEAD_DEC(skey, clientid, nil)?)?, SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, clientid, nil)?)?, AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?)?)?
+            s_ack → HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, clientid, nil)?)?, AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?)?)
+            encack → AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) ← mutated by Attacker (originally AEAD_ENC(s_sessionserver, s_ack, nil))
+            c_ack → AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?
+            encack (AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil)), sent by Attacker and not by Server, is successfully used in AEAD_DEC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)? within Client's state.
+ (Analysis 150168)
+Deduction • Output of AEAD_ENC(nil, HASH(nil), nil) obtained by reconstructing with nil, HASH(nil), nil. (Analysis 150174)
+Deduction • Output of AEAD_ENC(CONCAT(clientid, c_tgstime), CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 155656)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 158531)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, oracle_input, nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 178331)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(oracle_input), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 188231)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(skey, oracle_input, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 198131)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(PW_HASH(cpassword), oracle_input, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 208031)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(PW_HASH(nil), nil, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 217931)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 227831)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, dummy, nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 237731)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 247631)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 257531)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 267431)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 277331)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 287231)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 891006)
+Deduction • Output of CONCAT(clientid, c_tgstime) obtained by decomposing AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil) with oracle_input. (Analysis 891006)
+Deduction • Output of CONCAT(clientid, c_servertime) obtained by decomposing AEAD_ENC(CONCAT(clientid, c_tgstime), CONCAT(clientid, c_servertime), nil) with CONCAT(clientid, c_tgstime). (Analysis 891006)
+Deduction • c_tgstime obtained as a concatenated fragment of CONCAT(clientid, c_tgstime). (Analysis 891006)
+Deduction • c_servertime obtained as a concatenated fragment of CONCAT(clientid, c_servertime). (Analysis 891006)
+Deduction • Output of HASH(c_servertime) obtained by reconstructing with c_servertime. (Analysis 891531)
+ Analysis • Initializing Stage 1 mutation map for As... 
+ Analysis • Initializing Stage 1 mutation map for Tgs... 
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2227568)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2227568)
+Deduction • Output of ASSERT(HASH(c_servertime), HASH(c_servertime)) obtained by reconstructing with HASH(c_servertime), HASH(c_servertime). (Analysis 2227883)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2228198)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2228199)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), oracle_input, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2228513)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), oracle_input, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2228513)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, oracle_input, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2228828)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, oracle_input, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2228829)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, oracle_input, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2229143)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, oracle_input, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2229144)
+Deduction • Output of AEAD_ENC(AEAD_DEC(oracle_input, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by reconstructing with AEAD_DEC(oracle_input, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil. (Analysis 2229458)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(oracle_input, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2229458)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(nil), nil, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2229773)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(nil), nil, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2229773)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2230088)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2230088)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), dummy, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2230403)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), dummy, nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2230404)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2230718)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2230719)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2231033)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2231034)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2231348)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2231349)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2231663)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2231663)
+Deduction • Output of AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil) obtained by equivalizing with the current resolution of encauthserver. (Analysis 2231978)
+Deduction • Output of AEAD_ENC(tgs_sessionserver, HASH(SPLIT(AEAD_DEC(tgs_sessionserver, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil), nil)?, AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil) obtained by equivalizing with the current resolution of encack. (Analysis 2231979)
+ Analysis • Initializing Stage 1 mutation map for Server... 
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 2232235)
+   Result • authentication? Client -> Server: encticket — When:
+            as_clientid → clientid
+            unnamed_0 → dummy
+            unnamed_1 → ASSERT(clientid, clientid)?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil)
+            enctgt → AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil)
+            c_sessiontgs → as_sessiontgs
+            encauthtgs → AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → clientid
+            tgs_sessiontgs → as_sessiontgs
+            tgs_clientid → clientid
+            tgs_time → c_tgstime
+            unnamed_2 → ASSERT(clientid, clientid)?
+            encsessionserver → AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil)
+            tgs_ticket → CONCAT(clientid, tgs_sessionserver)
+            encticket → AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil) ← obtained by Attacker
+            c_sessionserver → tgs_sessionserver
+            encauthserver → AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil)
+            s_ticketclientid → clientid
+            s_sessionserver → tgs_sessionserver
+            s_clientid → clientid
+            s_time → c_servertime
+            unnamed_3 → ASSERT(clientid, clientid)?
+            s_ack → HASH(c_servertime)
+            encack → AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil)
+            c_ack → HASH(c_servertime)
+            unnamed_4 → ASSERT(HASH(c_servertime), HASH(c_servertime))
+            oracle_client → AEAD_ENC(PW_HASH(cpassword), oracle_input, nil)
+
+            clientid is obtained:
+            as_clientid → clientid ← obtained by Attacker
+            unnamed_0 → dummy
+            unnamed_1 → ASSERT(clientid, clientid)?
+            encsessiontgs → clientid ← mutated by Attacker (originally AEAD_ENC(as_clientkey, as_sessiontgs, nil))
+            enctgt → clientid ← mutated by Attacker (originally AEAD_ENC(tgskey, as_tgt, nil))
+            c_sessiontgs → AEAD_DEC(PW_HASH(cpassword), clientid, nil)?
+            encauthtgs → AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_sessiontgs → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            tgs_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            unnamed_2 → ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, clientid, nil)?))?
+            encsessionserver → clientid ← mutated by Attacker (originally AEAD_ENC(tgs_sessiontgs, tgs_sessionserver, nil))
+            tgs_ticket → CONCAT(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), tgs_sessionserver)
+            encticket → AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil) ← mutated by Attacker (originally AEAD_ENC(skey, tgs_ticket, nil))
+            c_sessionserver → AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), clientid, nil)?, clientid, nil)?
+            encauthserver → clientid ← mutated by Attacker (originally AEAD_ENC(c_sessionserver, c_authserver, nil))
+            s_ticketclientid → clientid ← obtained by Attacker
+            encticket (AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil)), sent by Attacker and not by Client, is successfully used in SPLIT(CONCAT(clientid, tgs_sessionserver))? within Server's state.
+ (Analysis 2232671)
+   Result • confidentiality? c_sessionserver — When:
+            as_clientid → SPLIT(CONCAT(clientid, dummy))
+            unnamed_0 → SPLIT(CONCAT(clientid, dummy))
+            unnamed_1 → ASSERT(clientid, SPLIT(CONCAT(clientid, dummy)))?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil)
+            enctgt → AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil)
+            c_sessiontgs → AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?
+            encauthtgs → AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?)
+            tgs_sessiontgs → SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?)
+            tgs_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            tgs_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?)
+            unnamed_2 → ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?))?
+            encsessionserver → AEAD_ENC(SPLIT(CONCAT(clientid, as_sessiontgs)), tgs_sessionserver, nil)
+            tgs_ticket → CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver)
+            encticket → AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil)
+            c_sessionserver → AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?
+            encauthserver → AEAD_ENC(AEAD_DEC(as_sessiontgs, AEAD_ENC(clientid, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil)
+            s_ticketclientid → SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?
+            s_sessionserver → SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?
+            s_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?
+            s_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?
+            unnamed_3 → ASSERT(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?)?
+            s_ack → HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?)
+            encack → AEAD_ENC(SPLIT(CONCAT(clientid, tgs_sessionserver))?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil)
+            c_ack → AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?
+            unnamed_4 → ASSERT(AEAD_DEC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, HASH(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(skey, AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver), nil), nil)?)?, AEAD_ENC(AEAD_DEC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(cpassword), as_sessiontgs, nil), nil)?, AEAD_ENC(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?), tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_servertime), nil), nil)?)?), nil), nil)?, HASH(c_servertime))
+            oracle_client → AEAD_ENC(PW_HASH(cpassword), oracle_input, nil) ← obtained by Attacker
+
+            In another session:
+            as_clientid → clientid
+            unnamed_0 → dummy
+            unnamed_1 → ASSERT(clientid, clientid)?
+            encsessiontgs → AEAD_ENC(PW_HASH(cpassword), oracle_input, nil) ← mutated by Attacker (originally AEAD_ENC(as_clientkey, as_sessiontgs, nil))
+            enctgt → clientid ← mutated by Attacker (originally AEAD_ENC(tgskey, as_tgt, nil))
+            c_sessiontgs → oracle_input
+            encauthtgs → AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil)
+            tgs_tgtclientid → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_sessiontgs → SPLIT(AEAD_DEC(tgskey, clientid, nil)?)
+            tgs_clientid → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil), nil)?)
+            tgs_time → SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil), nil)?)
+            unnamed_2 → ASSERT(SPLIT(AEAD_DEC(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil), nil)?), SPLIT(AEAD_DEC(tgskey, clientid, nil)?))?
+            encsessionserver → clientid ← mutated by Attacker (originally AEAD_ENC(tgs_sessiontgs, tgs_sessionserver, nil))
+            tgs_ticket → CONCAT(SPLIT(AEAD_DEC(tgskey, clientid, nil)?), tgs_sessionserver)
+            encticket → clientid ← mutated by Attacker (originally AEAD_ENC(skey, tgs_ticket, nil))
+            c_sessionserver → AEAD_DEC(oracle_input, clientid, nil)?
+            c_sessionserver (CONCAT(clientid, c_tgstime)) is obtained by Attacker.
+ (Analysis 2375433)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, CONCAT(clientid, as_sessiontgs), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 2505475)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), oracle_input, nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 2642095)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgskey, oracle_input, nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 2778715)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, oracle_input, nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 2915335)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(PW_HASH(nil), nil, nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3188575)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(nil, CONCAT(nil, nil), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3325195)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), dummy, nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3461815)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, CONCAT(clientid, c_tgstime), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3598435)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(as_sessiontgs, tgs_sessionserver, nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3735055)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(skey, CONCAT(clientid, tgs_sessionserver), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 3871675)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, CONCAT(clientid, c_servertime), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 4008293)
+Deduction • Output of AEAD_ENC(AEAD_DEC(PW_HASH(cpassword), AEAD_ENC(tgs_sessionserver, HASH(c_servertime), nil), nil)?, CONCAT(clientid, c_tgstime), nil) obtained by equivalizing with the current resolution of encauthtgs. (Analysis 4144915)
+ Analysis • Initializing Stage 1 mutation map for Oracleclient... 
+ Analysis • Initializing Stage 1 mutation map for Oracleserver... 
+Deduction • Output of AEAD_ENC(tgskey, nil, nil) obtained by equivalizing with the current resolution of oracle_tgs. (Analysis 4281535)
+Deduction • Output of AEAD_ENC(skey, nil, nil) obtained by equivalizing with the current resolution of oracle_server. (Analysis 4281535)
+Deduction • Output of AEAD_ENC(PW_HASH(cpassword), nil, nil) obtained by equivalizing with the current resolution of oracle_client. (Analysis 4281535)
+ Analysis • Initializing Stage 3 mutation map for Client... 
+ Analysis • Initializing Stage 2 mutation map for Client... 
+Deduction • Output of AEAD_ENC(nil, nil, clientid) obtained by reconstructing with nil, nil, clientid. (Analysis 32752639)
+Deduction • Output of AEAD_ENC(nil, nil, oracle_input) obtained by reconstructing with nil, nil, oracle_input. (Analysis 32763357)
+Deduction • Output of AEAD_ENC(nil, nil, dummy) obtained by reconstructing with nil, nil, dummy. (Analysis 32774227)
+Deduction • Output of AEAD_ENC(nil, nil, c_tgstime) obtained by reconstructing with nil, nil, c_tgstime. (Analysis 32784973)
+Deduction • Output of AEAD_ENC(nil, nil, c_servertime) obtained by reconstructing with nil, nil, c_servertime. (Analysis 32795817)
+Deduction • Output of AEAD_ENC(nil, clientid, nil) obtained by reconstructing with nil, clientid, nil. (Analysis 32806757)
+Deduction • Output of AEAD_ENC(nil, clientid, clientid) obtained by reconstructing with nil, clientid, clientid. (Analysis 32817545)
+Deduction • Output of AEAD_ENC(nil, clientid, oracle_input) obtained by reconstructing with nil, clientid, oracle_input. (Analysis 32828373)
+Deduction • Output of AEAD_ENC(nil, clientid, dummy) obtained by reconstructing with nil, clientid, dummy. (Analysis 32839082)
+Deduction • Output of AEAD_ENC(nil, clientid, c_tgstime) obtained by reconstructing with nil, clientid, c_tgstime. (Analysis 32850087)
+Deduction • Output of AEAD_ENC(nil, clientid, c_servertime) obtained by reconstructing with nil, clientid, c_servertime. (Analysis 32860745)
+Deduction • Output of AEAD_ENC(nil, oracle_input, nil) obtained by reconstructing with nil, oracle_input, nil. (Analysis 32871665)
+Deduction • Output of AEAD_ENC(nil, oracle_input, clientid) obtained by reconstructing with nil, oracle_input, clientid. (Analysis 32882294)
+Deduction • Output of AEAD_ENC(nil, oracle_input, oracle_input) obtained by reconstructing with nil, oracle_input, oracle_input. (Analysis 32893216)
+Deduction • Output of AEAD_ENC(nil, oracle_input, dummy) obtained by reconstructing with nil, oracle_input, dummy. (Analysis 32903790)
+Deduction • Output of AEAD_ENC(nil, oracle_input, c_tgstime) obtained by reconstructing with nil, oracle_input, c_tgstime. (Analysis 32914714)
+Deduction • Output of AEAD_ENC(nil, oracle_input, c_servertime) obtained by reconstructing with nil, oracle_input, c_servertime. (Analysis 32925385)
+Deduction • Output of AEAD_ENC(nil, dummy, nil) obtained by reconstructing with nil, dummy, nil. (Analysis 32936133)
+Deduction • Output of AEAD_ENC(nil, dummy, clientid) obtained by reconstructing with nil, dummy, clientid. (Analysis 32946996)
+Deduction • Output of AEAD_ENC(nil, dummy, oracle_input) obtained by reconstructing with nil, dummy, oracle_input. (Analysis 32957691)
+Deduction • Output of AEAD_ENC(nil, dummy, dummy) obtained by reconstructing with nil, dummy, dummy. (Analysis 32968583)
+Deduction • Output of AEAD_ENC(nil, dummy, c_tgstime) obtained by reconstructing with nil, dummy, c_tgstime. (Analysis 32979322)
+Deduction • Output of AEAD_ENC(nil, dummy, c_servertime) obtained by reconstructing with nil, dummy, c_servertime. (Analysis 32990201)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, nil) obtained by reconstructing with nil, c_tgstime, nil. (Analysis 33000925)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, clientid) obtained by reconstructing with nil, c_tgstime, clientid. (Analysis 33011853)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, oracle_input) obtained by reconstructing with nil, c_tgstime, oracle_input. (Analysis 33022413)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, dummy) obtained by reconstructing with nil, c_tgstime, dummy. (Analysis 33033194)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, c_tgstime) obtained by reconstructing with nil, c_tgstime, c_tgstime. (Analysis 33043743)
+Deduction • Output of AEAD_ENC(nil, c_tgstime, c_servertime) obtained by reconstructing with nil, c_tgstime, c_servertime. (Analysis 33054648)
+Deduction • Output of AEAD_ENC(nil, c_servertime, nil) obtained by reconstructing with nil, c_servertime, nil. (Analysis 33065217)
+Deduction • Output of AEAD_ENC(nil, c_servertime, clientid) obtained by reconstructing with nil, c_servertime, clientid. (Analysis 33076095)
+Deduction • Output of AEAD_ENC(nil, c_servertime, oracle_input) obtained by reconstructing with nil, c_servertime, oracle_input. (Analysis 33086625)
+Deduction • Output of AEAD_ENC(nil, c_servertime, dummy) obtained by reconstructing with nil, c_servertime, dummy. (Analysis 33097541)
+Deduction • Output of AEAD_ENC(nil, c_servertime, c_tgstime) obtained by reconstructing with nil, c_servertime, c_tgstime. (Analysis 33108277)
+Deduction • Output of AEAD_ENC(nil, c_servertime, c_servertime) obtained by reconstructing with nil, c_servertime, c_servertime. (Analysis 33119077)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(nil, nil, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 50973342)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(nil, HASH(nil), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 52221993)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 53472968)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, c_tgstime, nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 54711542)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), nil) obtained by reconstructing with nil, CONCAT(clientid, dummy), nil. (Analysis 55557241)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, c_servertime, nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 55919408)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(nil), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 57120698)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), clientid) obtained by reconstructing with nil, CONCAT(clientid, dummy), clientid. (Analysis 57824039)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(skey, nil, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 58342438)
+Deduction • Output of AEAD_ENC(skey, CONCAT(SPLIT(AEAD_DEC(tgskey, AEAD_ENC(PW_HASH(cpassword), nil, nil), nil)?), tgs_sessionserver), nil) obtained by equivalizing with the current resolution of encticket. (Analysis 59561304)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), oracle_input) obtained by reconstructing with nil, CONCAT(clientid, dummy), oracle_input. (Analysis 60058928)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), dummy) obtained by reconstructing with nil, CONCAT(clientid, dummy), dummy. (Analysis 62214462)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), c_tgstime) obtained by reconstructing with nil, CONCAT(clientid, dummy), c_tgstime. (Analysis 64305116)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, dummy), c_servertime) obtained by reconstructing with nil, CONCAT(clientid, dummy), c_servertime. (Analysis 66435278)
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), clientid) obtained by reconstructing with nil, CONCAT(nil, nil), clientid. (Analysis 70625785)
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), oracle_input) obtained by reconstructing with nil, CONCAT(nil, nil), oracle_input. (Analysis 72711226)
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), dummy) obtained by reconstructing with nil, CONCAT(nil, nil), dummy. (Analysis 74821312)
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), c_tgstime) obtained by reconstructing with nil, CONCAT(nil, nil), c_tgstime. (Analysis 76919228)
+Deduction • Output of AEAD_ENC(nil, CONCAT(nil, nil), c_servertime) obtained by reconstructing with nil, CONCAT(nil, nil), c_servertime. (Analysis 78997008)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), nil) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), nil. (Analysis 81091271)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), clientid) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), clientid. (Analysis 83181211)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), oracle_input) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), oracle_input. (Analysis 85284822)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), dummy) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), dummy. (Analysis 87420772)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), c_tgstime) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), c_tgstime. (Analysis 89525693)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_tgstime), c_servertime) obtained by reconstructing with nil, CONCAT(clientid, c_tgstime), c_servertime. (Analysis 91694307)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), nil) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), nil. (Analysis 93965956)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), clientid) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), clientid. (Analysis 96277921)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), oracle_input) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), oracle_input. (Analysis 98557445)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), dummy) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), dummy. (Analysis 100805749)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), c_tgstime) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), c_tgstime. (Analysis 103094705)
+Deduction • Output of AEAD_ENC(nil, CONCAT(clientid, c_servertime), c_servertime) obtained by reconstructing with nil, CONCAT(clientid, c_servertime), c_servertime. (Analysis 105358395)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), nil) obtained by reconstructing with clientid, CONCAT(clientid, dummy), nil. (Analysis 107610361)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), clientid) obtained by reconstructing with clientid, CONCAT(clientid, dummy), clientid. (Analysis 109876899)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), oracle_input) obtained by reconstructing with clientid, CONCAT(clientid, dummy), oracle_input. (Analysis 112136643)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), dummy) obtained by reconstructing with clientid, CONCAT(clientid, dummy), dummy. (Analysis 114450499)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), c_tgstime) obtained by reconstructing with clientid, CONCAT(clientid, dummy), c_tgstime. (Analysis 116754332)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, dummy), c_servertime) obtained by reconstructing with clientid, CONCAT(clientid, dummy), c_servertime. (Analysis 119000710)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), nil) obtained by reconstructing with clientid, CONCAT(nil, nil), nil. (Analysis 121151649)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), clientid) obtained by reconstructing with clientid, CONCAT(nil, nil), clientid. (Analysis 123325791)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), oracle_input) obtained by reconstructing with clientid, CONCAT(nil, nil), oracle_input. (Analysis 125498684)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), dummy) obtained by reconstructing with clientid, CONCAT(nil, nil), dummy. (Analysis 127636307)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), c_tgstime) obtained by reconstructing with clientid, CONCAT(nil, nil), c_tgstime. (Analysis 129761852)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(nil, nil), c_servertime) obtained by reconstructing with clientid, CONCAT(nil, nil), c_servertime. (Analysis 131929556)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), nil) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), nil. (Analysis 134076491)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), clientid) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), clientid. (Analysis 136202802)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), oracle_input) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), oracle_input. (Analysis 138345679)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), dummy) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), dummy. (Analysis 140488338)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), c_tgstime) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), c_tgstime. (Analysis 142645298)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_tgstime), c_servertime) obtained by reconstructing with clientid, CONCAT(clientid, c_tgstime), c_servertime. (Analysis 144833618)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), nil) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), nil. (Analysis 146990638)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), clientid) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), clientid. (Analysis 149150562)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), oracle_input) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), oracle_input. (Analysis 151290805)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), dummy) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), dummy. (Analysis 153475432)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), c_tgstime) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), c_tgstime. (Analysis 155635386)
+Deduction • Output of AEAD_ENC(clientid, CONCAT(clientid, c_servertime), c_servertime) obtained by reconstructing with clientid, CONCAT(clientid, c_servertime), c_servertime. (Analysis 157759428)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), nil) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), nil. (Analysis 159909289)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), clientid) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), clientid. (Analysis 162061237)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), oracle_input) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), oracle_input. (Analysis 164202820)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), dummy) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), dummy. (Analysis 166340760)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), c_tgstime) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), c_tgstime. (Analysis 168489904)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, dummy), c_servertime) obtained by reconstructing with oracle_input, CONCAT(clientid, dummy), c_servertime. (Analysis 170618232)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), nil) obtained by reconstructing with oracle_input, CONCAT(nil, nil), nil. (Analysis 172807749)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), clientid) obtained by reconstructing with oracle_input, CONCAT(nil, nil), clientid. (Analysis 174984401)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), oracle_input) obtained by reconstructing with oracle_input, CONCAT(nil, nil), oracle_input. (Analysis 177119004)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), dummy) obtained by reconstructing with oracle_input, CONCAT(nil, nil), dummy. (Analysis 179358698)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), c_tgstime) obtained by reconstructing with oracle_input, CONCAT(nil, nil), c_tgstime. (Analysis 181604608)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(nil, nil), c_servertime) obtained by reconstructing with oracle_input, CONCAT(nil, nil), c_servertime. (Analysis 183855621)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), clientid) obtained by reconstructing with oracle_input, CONCAT(clientid, c_tgstime), clientid. (Analysis 188269992)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), oracle_input) obtained by reconstructing with oracle_input, CONCAT(clientid, c_tgstime), oracle_input. (Analysis 190509166)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), dummy) obtained by reconstructing with oracle_input, CONCAT(clientid, c_tgstime), dummy. (Analysis 192733855)
+Deduction • Output of AEAD_ENC(oracle_input, CONCAT(clientid, c_tgstime), c_tgstime) obtained by reconstructing with oracle_input, CONCAT(clientid, c_tgstime), c_tgstime. (Analysis 194940977)
+
