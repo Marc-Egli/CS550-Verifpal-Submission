@@ -14,11 +14,11 @@
 └── README.md
 ``` 
 
-The `models folders containts the different Verifpal implementations of Kerberos.
-- `kerberos_active_guarded.vp`: active attacker, all variable guarded. Verifcation terminates in 20 minutes.
-- `kerberos_active.vp`: active attaker, all variable unguarded. Verifiction takes weeks/months.
+The `models folders contains the different Verifpal implementations of Kerberos.
+- `kerberos_active_guarded.vp`: active attacker, all variables guarded. Verification terminates in 20 minutes.
+- `kerberos_active.vp`: active attacker, all variable unguarded. Verification takes weeks/months.
 - `kerberos_oracle.vp`: active attacker with a chosen plaintext oracle. An attack is found after a few hours
-- `kerberos_passive.vp`: passive attacker. Verifaction terminates in a few seconds.
+- `kerberos_passive.vp`: passive attacker. Verification terminates in a few seconds.
 
 In `outputs` you find the Verifpal verification trace obtained by running the verification of `kerberos_oracle.vp`
 for a few hours, this contains the Proof of Concept of the found attack.
